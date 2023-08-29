@@ -40,7 +40,7 @@ jobs:
         #Run collection 
       - name: Run Collection
         run: |
-          newman run "New Collection.postman_collection.json" -e "README.md" -r htmlextra --reporter- htmlextra-export Sampleartifact/report.html
+          newman run "New Collection.postman_collection.json" -e -r htmlextra --reporter- htmlextra-export Sampleartifact/report.html
         #publish the Report 
       - name: Publish report 
         uses: actions/checkout@v3
