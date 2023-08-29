@@ -40,7 +40,7 @@ jobs:
         #Run collection 
       - name: Run Collection
         run: |
-          newman run "New Collection.postman_collection.json" -e --reporter- htmlextra-export Sampleartifact/report.html
+         docker run -v ~/collections:/etc/postman -t postman/newman     https://www.getpostman.com/collections/df0a40ef41d570c48154     --environment="HTTPBinNewmanTest.json.postman_environment"     --reporters junit --reporter-junit-export="newman-report.xml"
         #publish the Report 
       - name: Publish report 
         uses: actions/checkout@v3
