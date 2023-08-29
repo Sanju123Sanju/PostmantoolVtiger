@@ -31,7 +31,7 @@ jobs:
         with:
           node-version: '17.x'
 
-       #Install Newman and reporter
+       #Install newman and reporter
       - name: Install newman
         run:  |
           npm install -g newman
@@ -40,7 +40,7 @@ jobs:
         #Run collection 
       - name: Run Collection
         run: |
-          Newman run "E:\postman\PostmantoolVtiger\New Collection.postman_collection.json" -e "E:\postman\PostmantoolVtiger\New Collection.postman_collection.json" -r htmlextra --reporter-htmlextra-export Sampleartifact/report.html
+          newman run "PostmantoolVtiger/New Collection.postman_collection.json" -e "PostmantoolVtiger/New Collection.postman_collection.json" -r htmlextra --reporter-htmlextra-export Sampleartifact/report.html
       #publish the Report 
       - name: Publish report 
         uses: actions/checkout@v3
