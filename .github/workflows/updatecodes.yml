@@ -27,7 +27,7 @@ jobs:
       # - name: Create dir
       #Install Nodejs
       - name: Install Node
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
         with:
           node-version: '17.x'
 
@@ -40,7 +40,7 @@ jobs:
         #Run collection 
       - name: Run Collection
         run: |
-             Newman run "E:\postman\PostmantoolVtiger\New Collection.postman_collection.json" -e "E:\postman\PostmantoolVtiger\New Collection.postman_collection.json" -r htmlextra --reporter-htmlextra-export Sampleartifact/report.html
+          Newman run "E:\postman\PostmantoolVtiger\New Collection.postman_collection.json" -e "E:\postman\PostmantoolVtiger\New Collection.postman_collection.json" -r htmlextra --reporter-htmlextra-export Sampleartifact/report.html
       #publish the Report 
       - name: Publish report 
         uses: actions/checkout@v3
