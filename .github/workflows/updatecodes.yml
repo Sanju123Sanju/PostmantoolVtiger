@@ -26,10 +26,10 @@ jobs:
      - uses: actions/checkout@v3
      - name: Create dir
        run: | 
-          mkdir Sampleartifact
+          mkdir SampleArtifact
       #Install Nodejs
-     - name: Install Node
-       uses: actions/checkout@v3
+     - name: Setup Node
+       uses: actions/setup-node@v3
        with:
           node-version: 'v18.17.1'
 
@@ -42,9 +42,9 @@ jobs:
         #Run collection 
      - name: Run Collection
        run: |
-         newman run "New Collection.postman_collection.json" -e "New Collection.postman_collection.json" -r htmlextra --reporter-htmlextra-export Sampleartifact/report.html
-     - name: Publish report 
-       uses: actions/checkout@v3
+         newman run "New Collection.postman_collection.json" -e "New Collection.postman_collection.json" -r htmlextra --reporter-htmlextra-export SampleArtifact/report.html
+     - name: Publish Report 
+       uses: actions/upload-artifact@v3
        with:
          name: Reports
-         path: Sampleartifact
+         path: SampleArtifact
