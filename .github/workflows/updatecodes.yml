@@ -40,7 +40,7 @@ jobs:
         #Run collection 
       - name: Run Collection
         run: |
-          newman run E:\postman\PostmantoolVtiger\New Collection.postman_collection.json --reporters cli,junit --reporter-junit-export test-report.xml
+          newman run .//New Collection.postman_collection.json --reporters cli,junit --reporter-junit-export test-report.xml
       - name: Upload test report
         uses: actions/upload-artifact@v2
         with:
